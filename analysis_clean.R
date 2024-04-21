@@ -50,7 +50,7 @@ csf_ptau_cn_sd   <- 9.171088
 
 ########################################################
 ## load tables ##
-#polygen <- read.csv("ADNI1_3_genetic_summary.csv")
+
 polygen <- read.csv("ADNI1_3_genetic_summary_CEU80_rel.csv")
 if (use_bellenguez){
   #replce Kunkle PRS with Bellenguez PRS
@@ -88,7 +88,6 @@ tau_cuts <- zcuts * tau_pet_cn_sd + tau_pet_cn_mean
 
 #define csf ptau cutoffs based on youden's index
 csf_ocp2 <- c()
-#tmp_data <- merge(roche_elecsys_clean, taupet, by=c("RID","VISCODE2"))
 tmp_data <- merge(roche_csf, taupet, by=c("RID","VISCODE2"))
 for (sss in tau_cuts){
   tmp_data[["PETpos"]] <- tmp_data$META_TEMPORAL_SUVR > sss

@@ -2,9 +2,7 @@
 zero_to_A <- c()
 A_to_T <- c()
 
-#for (tcut_idx in 1:10){
-#for (tcut_idx in c(5,10)){
-for (tcut_idx in c(5)){
+for (tcut_idx in 1:10){
   message("Running analysis with cutoff ", tcut_idx)
   source("analysis_clean.R")
 
